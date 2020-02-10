@@ -12,8 +12,9 @@ export class Search extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault()
-    console.log(this.state.text);
+    e.preventDefault();
+    this.props.searchUsers(this.state.text);
+    this.setState({ text: "" });
   };
   render() {
     return (
@@ -30,7 +31,6 @@ export class Search extends Component {
             type="submit"
             value="Search"
             className="btn btn-dark btn-block"
-            
           />
         </form>
       </div>
