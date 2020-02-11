@@ -7,6 +7,7 @@ import User from "./components/users/User";
 import Search from "./components/users/Search";
 import About from "./components/pages/About";
 import "./App.css";
+import GithubState from './context/github/GithubState'
 import axios from "axios";
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
   };
 
   return (
+    <GithubState>
     <Router>
       <div className="App">
         <Navbar> </Navbar>
@@ -108,6 +110,7 @@ const App = () => {
         </div>
       </div>
     </Router>
+    </GithubState>
   );
 };
 
